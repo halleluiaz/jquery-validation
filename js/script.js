@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 27 Nov 2022 at 1AM
+updated by HZ on 27 Nov 2022 at 3PM
 
 Purpose: This script contains the functions that builds the dynamic multiplication
 table from user input and validates the user input.
@@ -107,48 +107,45 @@ function buildTable()
     var minY = parseInt(document.getElementById('multiplicand_min').value, 10);
     var maxY = parseInt(document.getElementById('multiplicand_max').value, 10);
 
-    // var accept = validate(minX, maxX, minY, maxY);  // determine if user input is valid
-    if(true)  // if valid, build table
-    {
-        var table = "";  // will contain a string of the HTML structure of the table
-        table += "<table>";  // insert starting tag for the table
-        var headerX = true;  // use to track when in the first row of table
-        var headerY = true;  // use to track when in ther first column
+    // input already validated, so its safe to build the multiplication table with it
+    var table = "";  // will contain a string of the HTML structure of the table
+    table += "<table>";  // insert starting tag for the table
+    var headerX = true;  // use to track when in the first row of table
+    var headerY = true;  // use to track when in ther first column
 
-        for(var row = minY - 1; row<= maxY; row++)  // # rows = # of cells in a column
+    for(var row = minY - 1; row<= maxY; row++)  // # rows = # of cells in a column
+    {
+        table += "<tr>"; // insert starting tag for a row
+        for(var column = minX - 1; column <= maxX; column++)  // # colums = # cells in a row
         {
-            table += "<tr>"; // insert starting tag for a row
-            for(var column = minX - 1; column <= maxX; column++)  // # colums = # cells in a row
+            if(headerX == true)  // in the horizontal header
             {
-                if(headerX == true)  // in the horizontal header
+                table += "<th class='xHeader'>";  // insert starting tag for header with class to identify first row
+                if(headerY == false)
                 {
-                    table += "<th class='xHeader'>";  // insert starting tag for header with class to identify first row
-                    if(headerY == false)
-                    {
-                        table += column + "</th>"; // insert value of cell and closing tag
-                    }
+                    table += column + "</th>"; // insert value of cell and closing tag
+                }
+            }
+            else
+            {
+                if(headerY == true)  // in vertical header
+                {
+                    table += "<th class='yHeader'>" + row + "</th>";  // insert element for header with class to identify first column
+                    
                 }
                 else
                 {
-                    if(headerY == true)  // in vertical header
-                    {
-                        table += "<th class='yHeader'>" + row + "</th>";  // insert element for header with class to identify first column
-                        
-                    }
-                    else
-                    {
-                        table += "<td class='table-body'>" + (row*column) + "</td>"; // insert element for data with class to identify non-header cells
-                    }
+                    table += "<td class='table-body'>" + (row*column) + "</td>"; // insert element for data with class to identify non-header cells
                 }
-                headerY = false;
             }
-            table += "</tr>"; // insert closing tag for the row
-            headerX = false;
-            headerY = true;
+            headerY = false;
         }
-        table += "</table>"; // insert closing tag for the table
-        document.getElementById('multiplication-table').innerHTML = table; // insert table into the HTML structure to display it
+        table += "</tr>"; // insert closing tag for the row
+        headerX = false;
+        headerY = true;
     }
+    table += "</table>"; // insert closing tag for the table
+    document.getElementById('multiplication-table').innerHTML = table; // insert table into the HTML structure to display it
 
     event.preventDefault();  // ensures that page won't reload onclick
 }
