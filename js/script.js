@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 27 Nov 2022 at 3PM
+updated by HZ on 27 Nov 2022 at 6PM
 
 Purpose: This script contains the functions that builds the dynamic multiplication
 table from user input and validates the user input.
@@ -107,6 +107,22 @@ function buildTable()
     var minY = parseInt(document.getElementById('multiplicand_min').value, 10);
     var maxY = parseInt(document.getElementById('multiplicand_max').value, 10);
 
+    // Remove any old error messages for new ones
+    $("#minmax-multiplier").empty();
+    $("#minmax-multiplicand").empty();
+
+    // if the min > max for the multiplier or multiplicand, alert the user and switch them to build the table
+    // Referenced: https://dmitripavlutin.com/swap-variables-javascript/ about destructuring assignment
+    if(minX > maxX)
+    {
+        $("#minmax-multiplier").append("<p>The minimum is greater than the maximum for the multiplier. Their values have been swapped to build the table.</p>");
+        [minX, maxX] = [maxX, minX];
+    }
+    if(minY > maxY)
+    {
+        $("#minmax-multiplicand").append("<p>The minimum is greater than the maximum for the multiplicand. Their values have been swapped to build the table.</p>");
+        [minY, maxY] = [maxY, minY];
+    }
     // input already validated, so its safe to build the multiplication table with it
     var table = "";  // will contain a string of the HTML structure of the table
     table += "<table>";  // insert starting tag for the table

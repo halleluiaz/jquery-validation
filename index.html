@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 27 Nov 2022 at 3PM
+updated by HZ on 27 Nov 2022 at 6PM
 
 Purpose: All structure minus the dynamic table for the website is defined here.
 Makes use of attributes to give unique identifiers to elements so that they can
@@ -35,6 +35,7 @@ index.html with minor changes to use JQuery validation
                   <br>
                   <label for="multiplier_max">Maximum</label>
                   <input type="number" name="multiplier_max" id="multiplier_max" min="-50" max="50" required>
+                  <div id="minmax-multiplier"></div>
               </fieldset>
               <fieldset>
                   <legend>Multiplicand Range(Vertical Axis)</legend>
@@ -43,6 +44,7 @@ index.html with minor changes to use JQuery validation
                   <br>
                   <label for="multiplicand_max">Maximum</label>
                   <input type="number" name="multiplicand_max" id="multiplicand_max" min="-50" max="50" required>
+                  <div id="minmax-multiplicand"></div>
               </fieldset>
               <!--Type button to ensure page will not reload onclick, call function to generate table onclick-->
               <input id="form_submit" type="submit" value="Create Your Table">
