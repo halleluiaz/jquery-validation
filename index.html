@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 26 Nov 2022 at 11PM
+updated by HZ on 27 Nov 2022 at 1AM
 
 Purpose: All structure minus the dynamic table for the website is defined here.
 Makes use of attributes to give unique identifiers to elements so that they can
@@ -18,7 +18,7 @@ index.html with minor changes to use JQuery validation
     <meta charset="utf-8">
     <title>Dynamic Multiplication Table</title>
     <link rel="stylesheet" href="css/style.css">
-    <!--<script src="js/script.js"></script>-->
+    <script src="js/script.js"></script>
   </head>
   <body>
       <h1>Dynamic Multiplication Table</h1>
@@ -45,7 +45,7 @@ index.html with minor changes to use JQuery validation
                   <br>
               </fieldset>
               <!--Type button to ensure page will not reload onclick, call function to generate table onclick-->
-              <input type="button" value="Create Your Table" onclick="buildTable();">
+              <input id="form_submit" type="submit" value="Create Your Table">
           </form>
 
           <!--Error messages related to invalid input will be inserted here by script.js-->
@@ -59,5 +59,10 @@ index.html with minor changes to use JQuery validation
      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
      <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+     <script>
+         $(document).ready(function() {  // As soon as the page is loaded, run validate();
+             validate();
+         });
+     </script>
   </body>
 </html>

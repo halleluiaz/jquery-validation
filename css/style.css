@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 26 Nov 2022 at 6PM
+updated by HZ on 27 Nov 2022 at 1AM
 
 Purpose: Style the elements of index.html to increase readability and ease of use
 of the site.
@@ -65,7 +65,7 @@ Center the fieldsets within the form to help group related inputs.
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
-    width: 60%;
+    width: 50%;
 }
 
 #form legend {
@@ -80,17 +80,17 @@ Center the fieldsets within the form to help group related inputs.
 Styled to match the site's aesthetic rather than using the bland grey
 button.
 */
-#form input[type="button"] {
+#form input[type="submit"] {
     color: #8E3200;
     background-color: #ffffff;
     font-weight: bold;
 }
 
-#form input[type="button"]:hover {
+#form input[type="submit"]:hover {
     background-color: #f5c04d;
 }
 
-#form input[type="button"]:active {
+#form input[type="submit"]:active {
     background-color: #000000;
     color: #ffffff;
 }
