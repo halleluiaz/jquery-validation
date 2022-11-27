@@ -86,7 +86,7 @@ function validate() {
             $("#error_invalid_input").empty();
             $("#minmax-multiplier").empty();
             $("#minmax-multiplicand").empty();
-            $("#multiplication_table").empty();
+            $("#multiplication-table").empty();
             return false;
         },
 
