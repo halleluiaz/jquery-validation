@@ -84,6 +84,8 @@ function validate() {
         // if any input is invalid, remove old error messages for new ones and remove multiplication table
         invalidHandler: function() {
             $("#error_invalid_input").empty();
+            $("#minmax-multiplier").empty();
+            $("#minmax-multiplicand").empty();
             $("#multiplication_table").empty();
             return false;
         },
