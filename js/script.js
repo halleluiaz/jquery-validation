@@ -5,7 +5,7 @@ Halleluia Zeyohannes, UMass Lowell Computer Science,
 halleluia_zeyohannes@student.uml.edu
 Copyright (c) 2022 by Halleluia Zeyohannes. All rights reserved. May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by HZ on 26 Nov 2022 at 8PM
+updated by HZ on 26 Nov 2022 at 11PM
 
 Purpose: This script contains the functions that builds the dynamic multiplication
 table from user input and validates the user input.
@@ -82,7 +82,7 @@ $(document).ready(function() {
                 $("#error_invalid_input").empty();
                 $("#multiplication_table").empty();
               },
-              
+
             // if there is an error, this will place the error messages after the element with invalid input, without using multiple div's to do so
             // Referenced https://stackoverflow.com/questions/3691743/jquery-validate-how-to-keep-error-messages-from-altering-the-form-disposition
             errorElement: "div",
